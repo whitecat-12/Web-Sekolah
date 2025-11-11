@@ -907,6 +907,130 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+        
+        /* Ekstrakurikuler Section dengan Gambar */
+.ekstrakurikuler {
+    background-color: var(--white);
+}
+
+.ekstra-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.ekstra-card {
+    background-color: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    position: relative;
+}
+
+.ekstra-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(74, 108, 247, 0.3);
+}
+
+.ekstra-img-container {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.ekstra-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.ekstra-card:hover .ekstra-img {
+    transform: scale(1.1);
+}
+
+.ekstra-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.ekstra-card:hover .ekstra-overlay {
+    opacity: 0.9;
+}
+
+.ekstra-icon {
+    color: var(--white);
+    font-size: 2.5rem;
+    transform: scale(0) rotate(0deg);
+    transition: var(--transition);
+}
+
+.ekstra-card:hover .ekstra-icon {
+    transform: scale(1) rotate(360deg);
+}
+
+.ekstra-content {
+    padding: 25px;
+}
+
+.ekstra-title {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.ekstra-desc {
+    color: var(--text-light);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.ekstra-features {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.ekstra-features li {
+    margin-bottom: 8px;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+}
+
+.ekstra-features li i {
+    color: var(--primary-color);
+    margin-right: 10px;
+    font-size: 0.9rem;
+}
+
+.ekstra-btn {
+    display: inline-block;
+    background: var(--gradient-primary);
+    color: var(--white);
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.ekstra-btn:hover {
+    background: transparent;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: translateY(-3px);
+}
     </style>
 </head>
 <body>
@@ -982,7 +1106,135 @@
             </div>
         </div>
     </section>
-
+<!-- Ekstrakurikuler Section -->
+<section class="ekstrakurikuler" id="ekstrakurikuler">
+    <div class="container">
+        <div class="section-title">
+            <h2>Ekstrakurikuler</h2>
+        </div>
+        <div class="ekstra-grid">
+            <!-- Sepak Bola -->
+            <div class="ekstra-card">
+                <div class="ekstra-img-container">
+                    <img src="https://images.unsplash.com/photo-1575361204480-aadea25e6e68?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Sepak Bola" class="ekstra-img">
+                    <div class="ekstra-overlay">
+                        <i class="fas fa-futbol ekstra-icon"></i>
+                    </div>
+                </div>
+                <div class="ekstra-content">
+                    <h3 class="ekstra-title">Sepak Bola</h3>
+                    <p class="ekstra-desc">Mengembangkan bakat sepak bola siswa dengan pelatihan profesional dan turnamen antar sekolah.</p>
+                    <ul class="ekstra-features">
+                        <li><i class="fas fa-check"></i> Pelatihan mingguan</li>
+                        <li><i class="fas fa-check"></i> Turnamen sekolah</li>
+                        <li><i class="fas fa-check"></i> Pembinaan tim</li>
+                    </ul>
+                    <a href="#" class="ekstra-btn">Lihat Jadwal</a>
+                </div>
+            </div>
+            
+            <!-- Paduan Suara -->
+            <div class="ekstra-card">
+                <div class="ekstra-img-container">
+                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Paduan Suara" class="ekstra-img">
+                    <div class="ekstra-overlay">
+                        <i class="fas fa-music ekstra-icon"></i>
+                    </div>
+                </div>
+                <div class="ekstra-content">
+                    <h3 class="ekstra-title">Paduan Suara</h3>
+                    <p class="ekstra-desc">Melatih vokal dan harmonisasi suara untuk mengembangkan bakat musik dan seni suara siswa.</p>
+                    <ul class="ekstra-features">
+                        <li><i class="fas fa-check"></i> Latihan vokal</li>
+                        <li><i class="fas fa-check"></i> Penampilan event</li>
+                        <li><i class="fas fa-check"></i> Kompetisi seni</li>
+                    </ul>
+                    <a href="#" class="ekstra-btn">Lihat Jadwal</a>
+                </div>
+            </div>
+            
+            <!-- Seni Lukis -->
+            <div class="ekstra-card">
+                <div class="ekstra-img-container">
+                    <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Seni Lukis" class="ekstra-img">
+                    <div class="ekstra-overlay">
+                        <i class="fas fa-paint-brush ekstra-icon"></i>
+                    </div>
+                </div>
+                <div class="ekstra-content">
+                    <h3 class="ekstra-title">Seni Lukis</h3>
+                    <p class="ekstra-desc">Mengembangkan kreativitas dan imajinasi siswa melalui berbagai teknik melukis dan menggambar.</p>
+                    <ul class="ekstra-features">
+                        <li><i class="fas fa-check"></i> Teknik dasar</li>
+                        <li><i class="fas fa-check"></i> Ekspresi kreatif</li>
+                        <li><i class="fas fa-check"></i> Pameran karya</li>
+                    </ul>
+                    <a href="#" class="ekstra-btn">Lihat Jadwal</a>
+                </div>
+            </div>
+            
+            <!-- Robotik -->
+            <div class="ekstra-card">
+                <div class="ekstra-img-container">
+                    <img src="images/image02" alt="Robotik" class="ekstra-img">
+                    <div class="ekstra-overlay">
+                        <i class="fas fa-robot ekstra-icon"></i>
+                    </div>
+                </div>
+                <div class="ekstra-content">
+                    <h3 class="ekstra-title">Robotik</h3>
+                    <p class="ekstra-desc">Memperkenalkan teknologi robotik dan pemrograman dasar untuk mengasah logika dan kreativitas.</p>
+                    <ul class="ekstra-features">
+                        <li><i class="fas fa-check"></i> Pemrograman dasar</li>
+                        <li><i class="fas fa-check"></i> Assembling robot</li>
+                        <li><i class="fas fa-check"></i> Kompetisi robotik</li>
+                    </ul>
+                    <a href="#" class="ekstra-btn">Lihat Jadwal</a>
+                </div>
+            </div>
+            
+            <!-- Pramuka -->
+            <div class="ekstra-card">
+                <div class="ekstra-img-container">
+                    <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Pramuka" class="ekstra-img">
+                    <div class="ekstra-overlay">
+                        <i class="fas fa-campground ekstra-icon"></i>
+                    </div>
+                </div>
+                <div class="ekstra-content">
+                    <h3 class="ekstra-title">Pramuka</h3>
+                    <p class="ekstra-desc">Membentuk karakter disiplin, mandiri, dan bertanggung jawab melalui kegiatan kepramukaan.</p>
+                    <ul class="ekstra-features">
+                        <li><i class="fas fa-check"></i> Kegiatan outdoor</li>
+                        <li><i class="fas fa-check"></i> Kemah bersama</li>
+                        <li><i class="fas fa-check"></i> Leadership training</li>
+                    </ul>
+                    <a href="#" class="ekstra-btn">Lihat Jadwal</a>
+                </div>
+            </div>
+            
+            <!-- IT Club -->
+            <div class="ekstra-card">
+                <div class="ekstra-img-container">
+                    <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="IT Club" class="ekstra-img">
+                    <div class="ekstra-overlay">
+                        <i class="fas fa-laptop-code ekstra-icon"></i>
+                    </div>
+                </div>
+                <div class="ekstra-content">
+                    <h3 class="ekstra-title">IT Club</h3>
+                    <p class="ekstra-desc">Mengembangkan kemampuan teknologi informasi dan coding untuk persiapan era digital.</p>
+                    <ul class="ekstra-features">
+                        <li><i class="fas fa-check"></i> Coding dasar</li>
+                        <li><i class="fas fa-check"></i> Desain grafis</li>
+                        <li><i class="fas fa-check"></i> Website development</li>
+                    </ul>
+                    <a href="#" class="ekstra-btn">Lihat Jadwal</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
     <!-- Akademik Section -->
     <section class="features" id="akademik">
         <div class="container">
